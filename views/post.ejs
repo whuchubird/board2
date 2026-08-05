@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<article>
+  <h2><%= post.title %></h2>
+  <div><small><%= post.author %> | <%= new Date(post.created_at).toLocaleString() %></small></div>
+  <div class="content"><pre><%= post.content %></pre></div>
+  <% if (user && user.username === post.author) { %>
+    <a href="/posts/<%= post.id %>/edit">수정</a>
+    <form action="/posts/<%= post.id %>/delete" method="POST" style="display:inline;">
+      <button type="submit">삭제</button>
+    </form>
+  <% } %>
+</article>
+<%- include('partials/footer') %>

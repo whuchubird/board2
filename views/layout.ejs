@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">게시판</a></h1>
+      <nav>
+        <% if (user) { %>
+        <span><%= user.username %>님 환영합니다.</span>
+        <a href="/posts/new">새 글쓰기</a>
+        <form action="/logout" method="POST" style="display:inline;">
+          <button type="submit">로그아웃</button>
+        </form>
+        <% } else { %>
+        <a href="/login">로그인</a>
+        <a href="/register">회원가입</a>
+        <% } %>
+      </nav>
+    </header>
+    <main>
+      <%- body %>
+    </main>
+  </body>
+</html>

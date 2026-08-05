@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<section>
+  <h2>글 목록</h2>
+  <% if (posts.length === 0) { %>
+    <p>아직 작성된 글이 없습니다.</p>
+  <% } else { %>
+    <ul>
+      <% posts.forEach(post => { %>
+      <li>
+        <a href="/posts/<%= post.id %>"><%= post.title %></a>
+        <div><small><%= post.author %> | <%= new Date(post.created_at).toLocaleString() %></small></div>
+      </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>
+<%- include('partials/footer') %>

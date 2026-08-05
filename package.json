@@ -1,0 +1,21 @@
+{
+  "name": "board-app",
+  "version": "1.0.0",
+  "description": "Node.js Express 게시판 with PostgreSQL 로그인/등록 기능",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "pg": "^8.11.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

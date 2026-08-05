@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<section>
+  <h2>글 수정</h2>
+  <% if (error) { %>
+    <div class="error"><%= error %></div>
+  <% } %>
+  <form action="/posts/<%= post.id %>/edit" method="POST">
+    <label>제목 <input name="title" value="<%= post.title %>" /></label>
+    <label>내용 <textarea name="content"><%= post.content %></textarea></label>
+    <button type="submit">수정하기</button>
+  </form>
+</section>
+<%- include('partials/footer') %>
